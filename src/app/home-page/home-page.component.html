@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura Navigation Bar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      color: #333;
+    }
+
+    .navbar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      transition: background-color 0.3s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo {
+      font-size: 48px;
+      color: black;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      position: relative;
+    }
+
+      .nav-links li {
+        position: relative;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        padding: 10px 15px;
+        transition: background-color 0.3s ease;
+      }
+
+        .nav-links a:hover {
+          background-color: rgba(0, 0, 0, 0.1);
+          border-radius: 5px;
+        }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+
+    .nav-links li:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown a {
+      padding: 10px 15px;
+      display: block;
+      color: #333;
+    }
+
+      .dropdown a:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+
+    .icons {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .img-container {
+      position: relative;
+      width: 80%;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+      .img-container img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.5s ease;
+      }
+
+      .img-container:hover img {
+        transform: scale(1.1);
+      }
+
+    .overlay {
+      position: absolute;
+      top: 50%;
+      right: 10%;
+      transform: translateY(-50%);
+      color: white;
+      font-size: 36px;
+      text-align: center;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+      max-width: 400px;
+      z-index: 2;
+    }
+
+    .features {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 40px 20px;
+      background-color: #f4f4f4;
+    }
+
+    .feature {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin: 10px;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease; /* Added transition for scaling */
+    }
+
+      .feature:hover {
+        transform: scale(1.05); /* Enlarge on hover */
+      }
+
+      .feature img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 10px;
+      }
+
+      .feature h3 {
+        margin: 10px 0;
+        color: #705C53;
+      }
+    .about {
+      background-image: url('/assets/home1.png');
+      background-size: cover;
+      background-position: center;
+      padding: 100px 40px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+      .about .content {
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 40px;
+        border-radius: 10px;
+        max-width: 800px;
+        text-align: center;
+      }
+
+      .about h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+
+      .about p {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+
+    .footer {
+      background-color: #EDE8DC;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin: 10px 0;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Aura</div>
+    <ul class="nav-links">
+      <li>
+        <a href="/makeup">Makeup</a>
+        <div class="dropdown">
+          <a href="/makeup/lips">Lips</a>
+          <a href="/makeup/face">Face</a>
+          <a href="/makeup/eyes">Eyes</a>
+        </div>
+      </li>
+      <li>
+        <a href="/skincare">Skincare</a>
+        <div class="dropdown">
+          <a href="/skincare/serums">Serums</a>
+          <a href="/skincare/moisturizer">Moisturizer</a>
+          <a href="/skincare/sunscreen">Sunscreen</a>
+        </div>
+      </li>
+      <li>
+        <a href="/haircare">Haircare</a>
+        <div class="dropdown">
+          <a href="/haircare/shampoo">Shampoo</a>
+          <a href="/haircare/conditioner">Conditioner</a>
+          <a href="/haircare/hair-serums">Hair Serums</a>
+        </div>
+      </li>
+      <li>
+        <a href="/fragrances">Fragrances</a>
+        <div class="dropdown">
+          <a href="/fragrances/perfume">Perfume</a>
+          <a href="/fragrances/deodorants">Deodorants</a>
+          <a href="/fragrances/body-mists">Body Mists</a>
+        </div>
+      </li>
+    </ul>
+    <div class="icons">
+      <a href="/search"><i class="fas fa-search"></i></a>
+      <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
+      <a href="/admin"><i class="fas fa-user-cog"></i></a>
+      <a href="/wishlist"><i class="fas fa-heart"></i></a>
+    </div>
+  </nav>
+
+  <!-- Image display -->
+  <div class="img-container">
+    <img src="assets/home2.png" alt="Beauty Image">
+    <div class="overlay">Explore your inner you</div>
+  </div>
+
+  <!-- About Us Section -->
+  <section class="about">
+    <div class="content">
+      <h2>About Aura Cosmetics</h2>
+      <p>Aura Cosmetics is dedicated to providing high-quality beauty products that enhance your natural beauty. Our diverse range includes makeup, skincare, and haircare products designed for all skin types and preferences. We believe in empowering individuals through beauty, encouraging creativity, and promoting self-expression.</p>
+    </div>
+  </section>
+  <br>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="feature">
+      <img src="assets/about1.jpg" alt="Quality Products">
+      <h3>Quality Products</h3>
+      <p>We offer a wide selection of quality products that meet the highest standards.</p>
+    </div>
+    <div class="feature">
+      <img src="assets/about2.jpg" alt="Eco-Friendly">
+      <h3>Eco-Friendly</h3>
+      <p>Our products are made with eco-friendly ingredients and sustainable practices.</p>
+    </div>
+    <div class="feature">
+      <img src="assets/about3.jpg" alt="Customer Support">
+      <h3>Customer Support</h3>
+      <p>Our dedicated customer support team is here to help you with any inquiries.</p>
+    </div>
+  </section>
+  <br />
+
+  <!-- Footer -->
+  <footer class="footer">
+    <h4>Connect with Us</h4>
+    <ul class="footer-links">
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/faq">FAQ</a></li>
+      <li><a href="/privacy">Privacy Policy</a></li>
+      <li><a href="/terms">Terms of Service</a></li>
+    </ul>
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://pinterest.com" target="_blank"><i class="fab fa-pinterest"></i></a>
+    </div>
+    <p>&copy; 2024 Aura. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

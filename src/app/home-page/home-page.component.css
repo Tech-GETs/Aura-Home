@@ -1,0 +1,157 @@
+/* Navbar Styles */
+body {
+  margin: 0; /* Remove default margin */
+  font-family: Arial, sans-serif; /* Set a default font */
+}
+
+.navbar {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  padding: 20px; /* Add padding around the navbar */
+  background-color: rgba(255, 255, 255, 0.8); /* Initial transparent background */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  position: relative; /* Position relative for absolute positioning of child elements */
+  backdrop-filter: blur(10px); /* Optional: add a blur effect to the background */
+}
+
+  .navbar:hover {
+    background-color: #EDE8DC; /* Change to beige on hover */
+  }
+
+/* Logo Styles */
+.logo {
+  font-size: 48px; /* Set a larger font size for the brand name */
+  color: black; /* Set the brand color */
+  text-align: center; /* Center the text */
+  margin-bottom: 10px; /* Space below the logo */
+  font-family: 'Qwitcher Grypen', serif; /* Use the custom font */
+}
+
+/* Navigation Links Styles */
+.nav-links {
+  list-style: none; /* Remove bullet points from the list */
+  display: flex; /* Use flexbox to arrange items in a row */
+  gap: 20px; /* Add space between navigation links */
+  position: relative; /* For positioning dropdown */
+}
+
+  .nav-links a {
+    text-decoration: none; /* Ensure no underline on all links */
+    color: #333; /* Set color to dark gray for links */
+    font-weight: 500; /* Set font weight for links */
+    padding: 10px 15px; /* Add padding for better click area */
+  }
+
+    .nav-links a:hover {
+      color: #705C53; /* Change color on hover */
+    }
+
+/* Dropdown Styles */
+.dropdown {
+  display: none; /* Hide dropdown by default */
+  position: absolute; /* Position dropdown */
+  background-color: #EDE8DC; /* Dropdown background color */
+  min-width: 150px; /* Minimum width for dropdown */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for dropdown */
+  z-index: 1; /* Ensure dropdown is above other elements */
+  margin-top: 10px; /* Space between nav item and dropdown */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust to center */
+}
+
+.nav-links li {
+  position: relative; /* Position relative for dropdown */
+}
+
+  .nav-links li:hover .dropdown {
+    display: block; /* Show dropdown on hover */
+  }
+
+.dropdown a {
+  display: block; /* Make dropdown links block elements */
+  padding: 10px 15px; /* Padding for dropdown links */
+  color: #333; /* Link color */
+  text-decoration: none; /* No underline */
+}
+
+  .dropdown a:hover {
+    background-color: #ddd; /* Change background on hover */
+    color: #705C53; /* Change text color on hover */
+  }
+
+/* Icons Container */
+.icons {
+  position: absolute; /* Position icons in the top right */
+  top: 20px; /* Align from the top */
+  right: 20px; /* Align from the right */
+  display: flex; /* Use flexbox for layout */
+  gap: 15px; /* Space between icons */
+}
+
+  .icons a {
+    color: black; /* Set color to black for icons */
+    font-size: 24px; /* Set icon size */
+    text-decoration: none; /* Remove underline from links */
+  }
+
+    .icons a:hover {
+      color: #705C53; /* Change color on hover */
+    }
+
+/* Image Styles */
+.banner-image {
+  width: 100%; /* Full width */
+  max-height: 440px; /* Adjusted maximum height */
+  object-fit: contain; /* Ensure the entire image is visible */
+  margin-top: 20px; /* Space above image */
+}
+
+
+/* Footer Styles */
+.footer {
+  background-color: #EDE8DC; /* Footer background color */
+  padding: 40px 20px; /* Padding for footer */
+  display: flex; /* Flexbox for layout */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items */
+  text-align: center; /* Center text */
+}
+
+  .footer h4 {
+    margin: 10px 0; /* Space above and below heading */
+    color: #333; /* Heading color */
+  }
+
+.footer-links {
+  list-style: none; /* Remove bullet points */
+  padding: 0; /* Remove padding */
+  display: flex; /* Use flexbox for layout */
+  gap: 20px; /* Space between links */
+  margin: 10px 0; /* Space above and below */
+}
+
+  .footer-links a {
+    text-decoration: none; /* No underline */
+    color: #333; /* Link color */
+  }
+
+    .footer-links a:hover {
+      color: #705C53; /* Change color on hover */
+    }
+
+.social-icons {
+  display: flex; /* Flexbox for layout */
+  gap: 15px; /* Space between icons */
+  margin: 10px 0; /* Space above and below */
+}
+
+  .social-icons a {
+    color: #333; /* Set color for icons */
+    font-size: 24px; /* Icon size */
+  }
+
+    .social-icons a:hover {
+      color: #705C53; /* Change color on hover */
+    }
